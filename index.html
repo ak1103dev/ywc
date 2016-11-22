@@ -19,8 +19,15 @@
       </h1>
     </div>
     <div class="body">
-      <div class="calendar">
+      <div id="calendar">
+        <p id="test">test</p>
       </div>
     </div>
+    <script type="text/javascript">
+      const numberDayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      const now = new Date();
+      const presentMonth = now.getMonth();
+      document.getElementById('test').innerHTML = `There are ${numberDayOfMonth[presentMonth]} days in this month`;
+    </script>
   </body>
 </html>
