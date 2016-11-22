@@ -3,69 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>YWCalendar</title>
-    <style>
-      .header {
-        display: table;
-        margin: 0 auto;
-      }
-    </style>
   </head>
   <body>
-    <div class="header">
-      <h1>
-        <span>Young</span><br/>
-        <span>Webmaster</span><br/>
-        <span>Calendar</span><br/>
-      </h1>
-    </div>
-    <div class="body">
-      <div id="calendar">
-        <p id="test">test</p>
-      </div>
-    </div>
-    <script type="text/javascript">
-      const month = [{
-        name: 'January',
-        num: 31
-      }, {
-        name: 'February',
-        num: 28
-      }, {
-        name: 'March',
-        num: 31
-      }, {
-        name: 'April',
-        num: 30
-      }, {
-        name: 'May',
-        num: 31
-      }, {
-        name: 'June',
-        num: 30
-      }, {
-        name: 'July',
-        num: 31
-      }, {
-        name: 'August',
-        num: 31
-      }, {
-        name: 'September',
-        num: 30
-      }, {
-        name: 'October',
-        num: 31
-      }, {
-        name: 'November',
-        num: 30
-      }, {
-        name: 'December',
-        num: 31
-      }];
-      const now = new Date();
-      const presentMonth = now.getMonth();
-      const presentYear = now.getFullYear();
-      document.getElementById('test').innerHTML =
-        `There are ${month[presentMonth].num} days in ${month[presentMonth].name} ${presentYear}`;
-    </script>
+    <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
   </body>
 </html>

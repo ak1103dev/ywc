@@ -1,0 +1,25 @@
+{
+  "name": "ywcalendar",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack ./index.js bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ak1103dev/YWCalendar.git"
+  },
+  "keywords": [
+    "ywc"
+  ],
+  "author": "ak1103dev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ak1103dev/YWCalendar/issues"
+  },
+  "homepage": "https://github.com/ak1103dev/YWCalendar#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3"
+  }
+}
