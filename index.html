@@ -24,10 +24,48 @@
       </div>
     </div>
     <script type="text/javascript">
-      const numberDayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      const month = [{
+        name: 'January',
+        num: 31
+      }, {
+        name: 'February',
+        num: 28
+      }, {
+        name: 'March',
+        num: 31
+      }, {
+        name: 'April',
+        num: 30
+      }, {
+        name: 'May',
+        num: 31
+      }, {
+        name: 'June',
+        num: 30
+      }, {
+        name: 'July',
+        num: 31
+      }, {
+        name: 'August',
+        num: 31
+      }, {
+        name: 'September',
+        num: 30
+      }, {
+        name: 'October',
+        num: 31
+      }, {
+        name: 'November',
+        num: 30
+      }, {
+        name: 'December',
+        num: 31
+      }];
       const now = new Date();
       const presentMonth = now.getMonth();
-      document.getElementById('test').innerHTML = `There are ${numberDayOfMonth[presentMonth]} days in this month`;
+      const presentYear = now.getFullYear();
+      document.getElementById('test').innerHTML =
+        `There are ${month[presentMonth].num} days in ${month[presentMonth].name} ${presentYear}`;
     </script>
   </body>
 </html>
