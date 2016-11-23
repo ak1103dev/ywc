@@ -1,16 +1,39 @@
-.App {
-  /*text-align: center;*/
-  display: table;
-  margin: 0 auto;
+.app {
+  display: block;
+  height: 100vh;
 }
 
-.App-header {
+.header {
   background-color: #222;
   height: 150px;
-  padding: 20px;
+  padding: 30px;
   color: white;
 }
+.header-title {
+  display: table;
+  margin: 10px auto;
+}
 
-.App-intro {
-  font-size: large;
+.body {
+  padding: 20px;
+}
+
+.calendar {
+}
+
+.title {
+  text-align: center;
+}
+.title-left {
+  float: left;
+}
+.title-right {
+  float: right;
+}
+.title-center {
+  display: inline-block;
+}
+
+.content {
+  margin: 0 auto;
 }

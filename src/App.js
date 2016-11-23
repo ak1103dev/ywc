@@ -15,30 +15,42 @@ class App extends Component {
     const { month, year, dates } = this.state;
     console.log(this.state);
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>
+      <div className="app">
+        <div className="header">
+          <h1 className="header-title">
             <span>Young</span><br/>
             <span>Webmaster</span><br/>
             <span>Calendar</span><br/>
           </h1>
         </div>
-        <div className="App-body">
-          <table>
-            <caption>{`${month} ${year}`}</caption>
-            <tr>
-              {dayOfWeek.map((day) =>
-                <th>{day}</th>
-              )}
-            </tr>
-            {dates.map((row) =>
+        <div className="body">
+          <div className="calendar">
+            <div className="title">
+              <div className="title-left">
+                <button>{`<`}</button>
+              </div>
+              <div className="title-right">
+                <button>{`>`}</button>
+              </div>
+              <div className="title-center">
+                <h2>{`${month} ${year}`}</h2>
+              </div>
+            </div>
+            <table className="content">
               <tr>
-                {row.map((date) =>
-                  <td>{date}</td>
+                {dayOfWeek.map((day) =>
+                  <th>{day}</th>
                 )}
               </tr>
-            )}
-          </table>
+              {dates.map((row) =>
+                <tr>
+                  {row.map((date) =>
+                    <td>{date}</td>
+                  )}
+                </tr>
+              )}
+            </table>
+          </div>
         </div>
       </div>
     );
