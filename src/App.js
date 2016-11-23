@@ -28,7 +28,7 @@ class App extends Component {
     this.update(date);
   }
   render() {
-    const dayOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const { month, year, dates } = this.state;
     return (
       <div className="app">
