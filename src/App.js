@@ -8,13 +8,11 @@ class App extends Component {
   state = {
     month: moment().format('MMMM'),
     year: moment().format('YYYY'),
-    date: getDates(moment())
+    dates: getDates(moment())
   }
   render() {
-    // const now = moment();
-    // const thisMonth = now.format('MMMM')
-    // const thisYear = now.format('YYYY');
-    // console.log(now.daysInMonth());
+    const dayOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const { month, year, dates } = this.state;
     console.log(this.state);
     return (
       <div className="App">
@@ -26,11 +24,21 @@ class App extends Component {
           </h1>
         </div>
         <div className="App-body">
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-          {/* <p>{thisMonth}</p>
-          <p>{thisYear}</p> */}
+          <table>
+            <caption>{`${month} ${year}`}</caption>
+            <tr>
+              {dayOfWeek.map((day) =>
+                <th>{day}</th>
+              )}
+            </tr>
+            {dates.map((row) =>
+              <tr>
+                {row.map((date) =>
+                  <td>{date}</td>
+                )}
+              </tr>
+            )}
+          </table>
         </div>
       </div>
     );
