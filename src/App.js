@@ -6,14 +6,30 @@ import { getDates } from './utils';
 
 class App extends Component {
   state = {
+    date: moment(),
     month: moment().format('MMMM'),
     year: moment().format('YYYY'),
     dates: getDates(moment())
   }
+  update = (date) => {
+    this.setState({
+      date,
+      month: date.format('MMMM'),
+      year: date.format('YYYY'),
+      dates: getDates(date)
+    });
+  }
+  prev = () => {
+    const date = this.state.date.subtract(1, 'month');
+    this.update(date);
+  }
+  next = () => {
+    const date = this.state.date.add(1, 'month');
+    this.update(date);
+  }
   render() {
     const dayOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
     const { month, year, dates } = this.state;
-    console.log(this.state);
     return (
       <div className="app">
         <div className="header">
@@ -27,28 +43,32 @@ class App extends Component {
           <div className="calendar">
             <div className="title">
               <div className="title-left">
-                <button>{`<`}</button>
+                <button onClick={this.prev}>{`<`}</button>
               </div>
               <div className="title-right">
-                <button>{`>`}</button>
+                <button onClick={this.next}>{`>`}</button>
               </div>
               <div className="title-center">
                 <h2>{`${month} ${year}`}</h2>
               </div>
             </div>
             <table className="content">
-              <tr>
-                {dayOfWeek.map((day) =>
-                  <th>{day}</th>
-                )}
-              </tr>
-              {dates.map((row) =>
+              <thead>
                 <tr>
-                  {row.map((date) =>
-                    <td>{date}</td>
+                  {dayOfWeek.map((day, i) =>
+                    <th key={i}>{day}</th>
+                  )}
+                </tr>
+              </thead>
+              <tbody>
+              {dates.map((row, i) =>
+                <tr key={i}>
+                  {row.map((date, j) =>
+                    <td key={j}>{date}</td>
                   )}
                 </tr>
               )}
+              </tbody>
             </table>
           </div>
         </div>
