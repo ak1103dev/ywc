@@ -5,20 +5,37 @@
 
 .header {
   background-color: #222;
-  height: 150px;
   padding: 30px;
   color: white;
 }
-.header-title {
-  display: table;
-  margin: 10px auto;
+@media (min-width: 701px) {
+  .header-title {
+    display: table;
+    margin: 10px auto;
+  }
+  .header-title-mobile {
+    display: none;
+  }
 }
+@media (max-width: 700px) {
+  .header-title {
+    display: none;
+  }
+  .header-title-mobile {
+    display: table;
+    margin: 10px auto;
+  }
+}
+
 
 .body {
   padding: 20px;
 }
 
 .calendar {
+  display: table;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .title {
@@ -36,4 +53,23 @@
 
 .content {
   margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .calendar {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+td {
+  height: 50px;
+  width: 14.29%;
 }

@@ -27,17 +27,31 @@ class App extends Component {
     const date = this.state.date.add(1, 'month');
     this.update(date);
   }
+  headerTitleRender() {
+    return (
+      <h1 className="header-title">
+        <span>Young</span><br/>
+        <span>Webmaster</span><br/>
+        <span>Calendar</span><br/>
+      </h1>
+    );
+  }
+  shortHeaderTitleRender() {
+    return (
+      <h1 className="header-title-mobile">
+        <span>YWCalendar</span>
+      </h1>
+    );
+  }
+
   render() {
     const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const { month, year, dates } = this.state;
     return (
       <div className="app">
         <div className="header">
-          <h1 className="header-title">
-            <span>Young</span><br/>
-            <span>Webmaster</span><br/>
-            <span>Calendar</span><br/>
-          </h1>
+          {this.headerTitleRender()}
+          {this.shortHeaderTitleRender()}
         </div>
         <div className="body">
           <div className="calendar">
