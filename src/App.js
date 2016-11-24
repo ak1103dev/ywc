@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 import moment from 'moment';
-import { getDates } from './utils';
+import { getDates, getPoint } from './utils';
 
 class App extends Component {
   state = {
     date: moment(),
     month: moment().format('MMMM'),
     year: moment().format('YYYY'),
-    dates: getDates(moment())
+    dates: getDates(moment()),
+    point: getPoint(moment()),
   }
   update = (date) => {
     this.setState({
@@ -47,6 +48,7 @@ class App extends Component {
   render() {
     const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const { month, year, dates } = this.state;
+    console.log(this.state);
     return (
       <div className="app">
         <div className="header">

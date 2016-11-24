@@ -10,3 +10,13 @@ export function getDates(dateObj) {
   ], 7);
   return dateInMonth;
 }
+
+export function getPoint(dateObj) {
+  const date = dateObj.format('D');
+  const dates = getDates(dateObj);
+  const dateList = dates.map((d) => d.indexOf(date));
+  const y = dateList.filter((v) => v !== -1)[0];
+  const x = dateList.indexOf(y);
+  console.log(date);
+  return { x, y };
+}
