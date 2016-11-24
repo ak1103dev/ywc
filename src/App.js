@@ -47,7 +47,7 @@ class App extends Component {
 
   render() {
     const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const { month, year, dates } = this.state;
+    const { month, year, dates, point } = this.state;
     console.log(this.state);
     return (
       <div className="app">
@@ -80,7 +80,7 @@ class App extends Component {
               {dates.map((row, i) =>
                 <tr key={i}>
                   {row.map((date, j) =>
-                    <td key={j}>{date}</td>
+                    <td key={j} className={point.x === i && point.y === j ? 'focus' : 'non-focus'}>{date}</td>
                   )}
                 </tr>
               )}

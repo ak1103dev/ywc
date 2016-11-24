@@ -35,7 +35,7 @@
 .calendar {
   display: table;
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
 }
 
 .title {
@@ -72,4 +72,10 @@ table, th, td {
 td {
   height: 50px;
   width: 14.29%;
+}
+.focus {
+  background-color: #5EEBAB;
+}
+.non-focus {
+  background-color: #F2F2F2;
 }
