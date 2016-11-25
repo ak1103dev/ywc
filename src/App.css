@@ -73,6 +73,10 @@ td {
   height: 50px;
   width: 14.29%;
 }
+th:nth-child(1), td:nth-child(1) {
+  color: red;
+}
+
 .focus {
   background-color: #5EEBAB;
 }
