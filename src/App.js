@@ -13,11 +13,17 @@ class App extends Component {
     point: getPoint(moment()),
   }
   update = (date) => {
+    const presentMonth = moment().format('M');
+    const presentYear = moment().format('YYYY');
+    const month = date.format('M');
+    const year = date.format('YYYY');
+    const isSame = presentYear === year && presentMonth === month;
     this.setState({
       date,
       month: date.format('MMMM'),
       year: date.format('YYYY'),
-      dates: getDates(date)
+      dates: getDates(date),
+      point: isSame ? getPoint(moment()) : { x: -1, y: -1}
     });
   }
   prev = () => {
